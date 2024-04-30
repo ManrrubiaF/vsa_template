@@ -1,0 +1,65 @@
+.divMayor{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    background-color: white;
+}
+.divMayor h1{
+    padding: 1rem;
+    align-self: center;
+    text-decoration: underline;
+    background-color: antiquewhite;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0, 1);
+}
+.filterDiv{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    align-content: center;
+    justify-content: center;
+}
+.productsShop{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.filterDiv select{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: black;
+    color: white;
+}
+.filterDiv button{
+    background-color: black;
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.filterDiv button:hover{
+    box-shadow: 3px 3px 3px 3px rgba(25, 25, 153, 1);
+}
+
+.productsList {
+    width: fit-content;
+    height: fit-content;
+    margin-left: 1rem;
+}
+.selectProduct{
+    background-color: gray;
+    color: white;
+    width: 20rem;
+    height: 20rem;
+}
+.selectProduct option{
+    margin-top: 10px;
+}
+
+.productSelect{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 30rem;
+    gap: 1rem;
+}

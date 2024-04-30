@@ -1,0 +1,66 @@
+.divMayor{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 80vh;  
+    overflow-y: auto;
+}
+
+.divTitles {
+    display: flex;
+    background-color: rgb(36, 165, 47);
+    justify-content: space-between;
+    width: 80vw;
+    height: fit-content;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.divTitles label{
+    margin-left: 4rem;
+    margin-right: 5rem;
+    color: white;
+}
+
+.oneBooking{
+    display: flex;   
+    flex-direction: column;
+}
+
+.notBookings p{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+.detailoneBooking{
+    display: grid;
+    grid-template-columns: repeat(5, 0.5fr);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+    border-top: 1px solid black;   
+    border-bottom: 1px dashed black;  
+}
+
+.detailoneBooking p{
+    align-self: center;
+    justify-self: center;
+}
+
+
+@media screen and (max-device-width: 768px) and (orientation: portrait) {
+    .divMayor{
+        width: 100vh;
+    }
+    .divTitles{
+        width: 100vh;
+        justify-content: space-between;
+    }
+    .divTitles label{
+        margin-right: 2rem;        
+        margin-left: 2rem;
+    }
+}
+

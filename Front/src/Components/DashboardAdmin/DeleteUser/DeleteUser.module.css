@@ -1,0 +1,55 @@
+.divMayor{
+    display: flex;
+    width: 80vw;
+    height: 80vh;
+    justify-content: center;
+}
+.titles{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: gray;
+}
+.titles label{
+    color:white;
+}
+.lastName{
+    margin-left: 17%;
+
+}
+.titles label:first-child{
+    margin-left: 2%;   
+}
+.titles label:last-child{
+    margin-left: 15%;
+}
+.userDataDiv{
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.oneUser{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+}
+
+.details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: dashed black 1px;
+
+}
+.details p{
+    margin: 1rem;
+}
+.iconX{
+    align-self: center;
+    justify-self: center;
+    color: red;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0 , 2);
+    cursor: pointer;
+}

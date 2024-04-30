@@ -1,0 +1,19 @@
+:root {
+  background-color: cornflowerblue;
+  background-size:auto;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: auto;
+  width: 100vw;
+}
+
+@media screen and (max-device-width: 768px) and (orientation: portrait){
+  body {
+    width: 100vw !important;
+  }
+}

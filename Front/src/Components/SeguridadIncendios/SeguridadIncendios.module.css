@@ -1,0 +1,30 @@
+.divMayor{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+.imgContainer{
+    width: 90vw;
+    height: 40vh;
+}
+.imgContainer img{
+    width: 90vw;
+    height: 40vh;
+}
+.textContainer{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    justify-self: center;
+    background-color: white;
+    width: 87vw;
+    height: 100%;
+}
+.textContainer h2{
+    color: black;
+}
+.textContainer p{
+    color: black;
+}

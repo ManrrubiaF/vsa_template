@@ -1,0 +1,116 @@
+.divMayor{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 88vw;
+    height: 100vh;
+    background-color: lightgray;
+}
+
+.divTitles {
+    display: flex;
+    width: 88vw;
+    background-color: white;
+    align-items: center;
+    justify-items: center;
+    height: fit-content;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.divTitles label{
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+.oneBooking{
+    display: flex;   
+    flex-direction: column;
+}
+
+.notBookings p{
+    justify-self: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+
+}
+
+
+.detailoneBooking{
+    display: grid;
+    grid-template-columns: repeat(6, 0.5fr);
+    background-color: white;
+    border-top: 1px solid black;   
+    border-bottom: 1px dashed black;  
+}
+
+.detailoneBooking p{
+    align-self: center;
+    justify-self: center;
+    margin-left: 3rem;
+}
+
+
+.oneBooking img{
+    width: 120px;
+    height: 120px;
+}
+
+.iconX{
+    align-self: flex-end;
+    margin-right: 15rem;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+    height: 1.5rem;
+    width: 1.5rem;
+    right: 0;
+    margin-top: 1rem;
+}
+.iconX:hover{
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,2);
+}
+
+.iconTrash{
+    align-self: flex-end;
+    margin-right: 15rem;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+    height: 1.5rem;
+    width: 1.5rem;
+    right: 0;
+    margin-top: 1rem;
+}
+
+.iconTrash:hover{
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,2);
+}
+
+@media screen and (max-device-width: 768px) and (orientation: portrait) {
+    .divMayor{
+        width: 100vh !important;
+    }
+    .divTitles{
+        justify-content: space-between !important;
+        width: 100vh !important;
+    }
+    .divTitles label{
+        margin: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .oneBooking{
+        width: 100vh !important;
+    }
+    .detailoneBooking{
+        width: 100vh !important;
+    }
+    .iconTrash{
+        margin-right: 2rem !important;
+    }
+    .iconX{
+        margin-right: 8rem !important;
+    }
+}
