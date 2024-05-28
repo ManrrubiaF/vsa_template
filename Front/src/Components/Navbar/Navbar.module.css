@@ -9,6 +9,49 @@
     
 }
 
+
+.mobileNav{
+    display: flex;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    width: 100vw;
+    height: fit-content;
+    justify-content: space-between;
+    border-bottom: 0.2rem black solid
+}
+.MenuIcon{
+    margin-left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+}
+.mobileNav h1{
+    align-self: center;
+    size: 2rem;
+    font-style: italic;
+}
+.MobileLogo{
+    width: 5rem;
+    height: 5rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+}
+.mobileMenu {
+    display: flex;
+    margin-top: 5rem;
+    position: fixed;
+    width: 97vw;
+    background-color: lightgray;
+    border: solid black;
+}
+.mobileMenu li{
+    list-style-type: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .divImg {
     margin-top: 0;
     display: flex;
@@ -177,34 +220,3 @@
     box-shadow: 3px 3px 3px 3px rgba(7,49,77,1);
 }
 
-@media screen and (max-device-width: 768px) and (orientation: portrait){
-    
-
-    .divImg{
-        width: 100%;
-    }
-    .buttonContainer{
-        width: 100vh !important;
-    }
-    .buttonContainer button{
-        margin: 1rem !important;
-    }
-    .divImg{
-        width: 100vh !important;
-    }
-    .dropdown{
-        display:flexbox !important;
-        width: fit-content !important;
-        margin: 0 !important;
-        right: -100% !important;
-        z-index: 9999 !important;
-        position: absolute !important;
-    }
-    .dropdownMenu{
-        display: flex !important;
-        margin-right: 0 !important;
-        right: -100% !important;
-        z-index: 9999 !important;
-        position: absolute !important;   
-    }
-}

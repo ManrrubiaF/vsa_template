@@ -102,19 +102,14 @@
     box-shadow: 1px 1px 1px 1px rgb(0,0,0,2);
 }
 
-@media screen and (max-device-width: 768px) and (orientation: portrait){
+@media screen and (device-width <= 768px) and (orientation: portrait){
     .containerProducts{
         display: grid !important;
-        grid-template-columns: repeat(3,1fr) !important;
-        grid-template-rows: repeat(4, auto) !important;
+        grid-template-columns: repeat(3,1fr) ;
+        grid-template-rows: repeat(3, auto) !important;
         margin:0 !important;
     }
-    .productsWithOutCart{
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-template-rows: repeat(6, auto) !important;
-        margin: 0 !important;
-    }
+    
     .filterDiv select {
         color: white;
     }

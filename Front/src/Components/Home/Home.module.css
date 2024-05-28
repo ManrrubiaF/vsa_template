@@ -76,22 +76,11 @@
 
 @media screen and (max-device-width: 768px) and (orientation: portrait){
     .divMayor{
-        width: 100vh !important;
+        width: 80vw !important;
     }
     .divContainer{
-        width: 100vh !important;
+        width: 80vw !important;
     }
-    .carousel{
-        justify-self: center !important;
-        margin: 0 !important;
-        margin-top: 2rem !important;
-        margin-bottom: 1rem !important;
-    }
-    .AboutContainer{
-        justify-self: center !important;
-        margin-top: 2rem !important;
-        width: 90vh !important;
-        margin-top: 1rem !important;
-        margin: 0 !important;
-    }
+   
+   
 }

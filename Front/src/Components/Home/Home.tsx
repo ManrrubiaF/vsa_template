@@ -1,5 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { useAppSelector } from "../../Redux/Hooks";
+import { useAppDispatch } from "../../Redux/Hooks";
+import { setData } from '../../Redux/Slice/contactSlice';
+import axios from 'axios';
+
 import Styles from "./Home.module.css";
 
 interface DataInfo {
@@ -14,10 +18,12 @@ interface DataInfo {
 }
 
 export default function Home() {
+  const BACK_URL = process.env.REACT_APP_BACK_URL;
   const dataAbout = useAppSelector<DataInfo>((state) => state.data);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement[]>([]);
   const intervalRef = useRef<NodeJS.Timeout>();
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     if (dataAbout.videos?.length > 0) {
@@ -31,6 +37,23 @@ export default function Home() {
       handleCarousel();
     }
   }, [carouselRef.current]);
+  useEffect(() => {
+    const hasInfo = Object.values(dataAbout).some(
+      (data) => data === ("" || 0 || [])
+    );
+    if (!hasInfo) {
+      getData();
+    }
+  }, []);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get(`${BACK_URL}/data`);
+      dispatch(setData(response.data));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleCarousel = () => {
     carouselRef.current.forEach((carousel) => {
@@ -102,11 +125,11 @@ export default function Home() {
           <div className={Styles.contentData}>
             <h1> Sobre Nosotros </h1>
             <p>
-              En VSA, nos dedicamos a proporcionar soluciones
-              integrales en seguridad y bienestar laboral. Con más de [X] años
-              de experiencia en el sector, nos hemos consolidado como líderes en
-              el mercado, brindando servicios de alta calidad y confiabilidad a
-              nuestros clientes.
+              En VSA, nos dedicamos a proporcionar soluciones integrales en
+              seguridad y bienestar laboral. Con más de [X] años de experiencia
+              en el sector, nos hemos consolidado como líderes en el mercado,
+              brindando servicios de alta calidad y confiabilidad a nuestros
+              clientes.
             </p>
             <h2>Nuestros Servicios</h2>
             <p>
@@ -124,12 +147,11 @@ export default function Home() {
             </p>
             <h2>Promoviendo un Entorno Seguro</h2>
             <p>
-              En VSA, nos comprometemos a promover una
-              cultura de seguridad en la que la protección de la salud y el
-              bienestar de nuestros clientes y sus empleados sea nuestra máxima
-              prioridad. Trabajamos incansablemente para garantizar que cada
-              proyecto se complete con los más altos estándares de calidad y
-              seguridad.
+              En VSA, nos comprometemos a promover una cultura de seguridad en
+              la que la protección de la salud y el bienestar de nuestros
+              clientes y sus empleados sea nuestra máxima prioridad. Trabajamos
+              incansablemente para garantizar que cada proyecto se complete con
+              los más altos estándares de calidad y seguridad.
             </p>
             <p>
               ¿Está listo para mejorar la seguridad y el bienestar en su lugar
@@ -144,7 +166,7 @@ export default function Home() {
             <div className={Styles.ubicacionDiv}>
               <p> Villa Dolores, Cordoba</p>
               <p> 25 de Mayo nº 390</p>
-              <img src="/assets/imagenes/VDolores.jpg" alt="mapa"  />
+              <img src="/assets/imagenes/VDolores.jpg" alt="mapa" />
             </div>
             <div className={Styles.ubicacionDiv}>
               <p> ciudad </p>
