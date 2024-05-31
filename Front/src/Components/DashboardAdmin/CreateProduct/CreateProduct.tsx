@@ -39,11 +39,8 @@ export default function CreateProduct() {
     })
     const [imagesUploaded, setImagesUploaded] = useState<string[]>([])
 
-<<<<<<< HEAD
     console.log(newProduct)
 
-=======
->>>>>>> 2f3c097 (sync)
 
     const upload = async (file: string | Blob) => {
         const formdata = new FormData();
@@ -57,10 +54,7 @@ export default function CreateProduct() {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-<<<<<<< HEAD
-=======
         handleSaveDetail()
->>>>>>> 2f3c097 (sync)
         try {
             const response = await axios.post(`${BACK_URL}/product/create`, newProduct,
                 {
@@ -75,10 +69,7 @@ export default function CreateProduct() {
                 category: '',
                 details: []
             })
-<<<<<<< HEAD
-=======
             setImagesUploaded([])
->>>>>>> 2f3c097 (sync)
             toast.success(response.data)
         } catch (error: any) {
             toast.error(error.response.data)
@@ -135,12 +126,8 @@ export default function CreateProduct() {
             color: '',
             stock: 0,
             image: []
-<<<<<<< HEAD
         })
-        setImagesUploaded([])
-=======
-        })       
->>>>>>> 2f3c097 (sync)
+        
 
     }
 
@@ -220,10 +207,6 @@ export default function CreateProduct() {
                             }}
                         />
                     </div>
-<<<<<<< HEAD
-                    <button className={Styles.SaveButton} type="button" onClick={handleSaveDetail} > Guardar detalle</button>
-=======
->>>>>>> 2f3c097 (sync)
                     <button className={Styles.CreateButton} type="submit"> Crear producto </button>
                 </form>
 
