@@ -81,8 +81,12 @@
 
 .buttonContainer button{
     margin-top: 1rem;
+    margin-left: 1.5rem;
     margin-bottom: 1rem;
     width: 100%;
+    color: black;
+    background-color: white;
+    border: solid 1px black
    
 }
 .buttonContainer button:hover{
