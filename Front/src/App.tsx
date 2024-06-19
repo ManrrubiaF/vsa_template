@@ -19,6 +19,10 @@ import HySAmbiental from "./Components/HySeguridadAmbiental/HySAmbiental";
 import HySIndustrial from "./Components/HySegurIndustrial/HySIndustrial";
 import ControlPlagas from "./Components/ControlDePlagas/ControlDePlagas";
 import SeguridadIncendios from "./Components/SeguridadIncendios/SeguridadIncendios";
+import Portfolio from "./Components/Portfolio/Portfolio";
+import PortfolioDetail from "./Components/DashboardAdmin/PorfolioDetail/PortfolioDetail";
+import PortfolioAdmin from "./Components/DashboardAdmin/PortfolioAdmin/PortfolioAdmin";
+import PortfolioCreate from "./Components/DashboardAdmin/PortfolioCreate/PortfolioCreate";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -85,6 +89,26 @@ function App() {
             element={<SeguridadIncendios />}
             Component={SeguridadIncendios}
           />
+          <Route 
+            path="Portfolio"
+            element={<Portfolio />}
+            Component={Portfolio}
+          />
+          <Route
+            path="someplace/portfolio/detail/:id"
+            element={<PortfolioDetail />}
+            Component={PortfolioDetail}
+          />
+          <Route 
+            path="someplace/portfolio"
+            element={<PortfolioAdmin />}
+            Component={PortfolioAdmin}
+          />     
+          <Route 
+            path="someplace/portfolio/create"
+            element={<PortfolioCreate />}
+            Component={PortfolioCreate}
+          />     
           <Route
             path="/someplace/detail/:id"
             element={<DashboardProductDetail />}

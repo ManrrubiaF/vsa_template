@@ -103,6 +103,8 @@ export default function ProductsDashBoard() {
     const endIndex = currentPage * elementsPerPage;
     const productsOnPage = productData.slice(startIndex, endIndex);
 
+    console.log(productsOnPage)
+
 
 
     return (

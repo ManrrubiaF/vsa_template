@@ -6,6 +6,7 @@ import cartReducer from './Slice/CartSlice'
 import paginationReducer from "./Slice/PaginationSlice";
 import userMenuReducer from "./Slice/UserMenu";
 import filterReducer from './Slice/FilterSlice';
+import portfolioReducer from './Slice/PortfolioSlice';
 
 
 export const store = configureStore({
@@ -17,6 +18,7 @@ export const store = configureStore({
         pagination: paginationReducer,
         userMenu: userMenuReducer,
         filter: filterReducer,
+        portfolio: portfolioReducer
     }
 });
 

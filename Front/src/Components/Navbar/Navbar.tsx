@@ -1,11 +1,10 @@
 import Styles from "./Navbar.module.css";
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../Redux/Hooks";
+import { useAppDispatch } from "../../Redux/Hooks";
 import { useNavigate } from "react-router-dom";
 import { resetPagination } from "../../Redux/Slice/PaginationSlice";
 
 export default function NavBar() {
-  const token: string | null = sessionStorage.getItem("token");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState<Boolean>(false);
@@ -84,6 +83,9 @@ export default function NavBar() {
                 <li onClick={() => navigate("/ControlPlagas")}>
                   Control de Plagas
                 </li>
+                <li onClick={() => navigate("/Portfolio")}>
+                  Portfolio
+                </li>
                 <li onClick={() => navigate("/SeguridadIncendios")}>
                   Seguridad contra incendios
                 </li>
@@ -139,6 +141,13 @@ export default function NavBar() {
             >
               {" "}
               Seguridad contra incendios
+            </button>
+            <button 
+              className={Styles.defaultButton}
+              onClick={() => navigate("/Portfolio")}
+            >
+              {" "}
+              Portfolio
             </button>
             <button
               className={Styles.defaultButton}

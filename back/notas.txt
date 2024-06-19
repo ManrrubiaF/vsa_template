@@ -1,2 +1,6 @@
-* Impedir poder eliminar usuario propio.
+* Impedir poder eliminar usuario propio. - OK
 * Adaptative mode.
+* Footer adios?
+* maps
+* zoom portfolio > galeria de fotos. 
+* volver del detail no mantiene el filtro

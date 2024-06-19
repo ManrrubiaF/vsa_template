@@ -1,0 +1,32 @@
+.divMayor{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: white;
+}
+
+
+
+.dataPic{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-left: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+    justify-items: center;
+}
+.detail{
+    display: flex;    
+}
+
+.detail img{
+    width: 120px;
+    height: 120px;
+}
+
+.detail span{
+    margin-left: 25px;
+    overflow-y: hidden;
+}

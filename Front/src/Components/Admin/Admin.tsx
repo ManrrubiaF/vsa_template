@@ -16,12 +16,16 @@ import { setRenderComponent } from "../../Redux/Slice/UserMenu";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import PortfolioAdmin from "../DashboardAdmin/PortfolioAdmin/PortfolioAdmin";
+import PortfolioCreate from "../DashboardAdmin/PortfolioCreate/PortfolioCreate";
 
 export default function Admin() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const accessStatus = useAppSelector((state) => state.user.User.access);
-  const optionSelected = useAppSelector((state) =>  state.userMenu.renderSelected);
+  const optionSelected = useAppSelector(
+    (state) => state.userMenu.renderSelected
+  );
   const [renderComponent, setRenderOption] = useState<React.ReactNode>(null);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -85,9 +89,13 @@ export default function Admin() {
       setRenderOption(<CreateUser />);
     } else if (optionSelected === "Solded") {
       setRenderOption(<CreateBooking />);
-    }else if (optionSelected === "DeleteUser") {
+    } else if (optionSelected === "DeleteUser") {
       setRenderOption(<DeleteUser />);
-    }else {
+    } else if (optionSelected === "Portfolio") {
+      setRenderOption(<PortfolioAdmin />);
+    } else if (optionSelected === "CreatePortfolio") {
+      setRenderOption(<PortfolioCreate />)
+    } else {
       setRenderOption(<div>No se seleccionó ninguna opción.</div>);
     }
   }, [optionSelected]);
@@ -135,6 +143,20 @@ export default function Admin() {
         <div>
           <div className={Styles.buttonContainer}>
             <div className={Styles.optionsContainer}>
+              <button onClick={() => dispatch(setRenderComponent("Portfolio"))}>
+                {" "}
+                Portfolio{" "}
+              </button>
+            </div>
+            <div className={Styles.optionsContainer}>
+              <button
+                onClick={() => dispatch(setRenderComponent("CreatePortfolio"))}
+              >
+                {" "}
+                Nuevo Portfolio{" "}
+              </button>
+            </div>
+            <div className={Styles.optionsContainer}>
               <button onClick={() => dispatch(setRenderComponent("products"))}>
                 {" "}
                 Productos{" "}
@@ -160,7 +182,9 @@ export default function Admin() {
             </div>
             {accessStatus === "Admin" && (
               <div className={Styles.optionsContainer}>
-                <button onClick={() => dispatch(setRenderComponent("CreateUser"))}>
+                <button
+                  onClick={() => dispatch(setRenderComponent("CreateUser"))}
+                >
                   {" "}
                   Crear usuario{" "}
                 </button>
@@ -168,7 +192,9 @@ export default function Admin() {
             )}
             {accessStatus === "Admin" && (
               <div className={Styles.optionsContainer}>
-                <button onClick={() => dispatch(setRenderComponent("DeleteUser"))}>
+                <button
+                  onClick={() => dispatch(setRenderComponent("DeleteUser"))}
+                >
                   {" "}
                   Eliminar usuario{" "}
                 </button>
